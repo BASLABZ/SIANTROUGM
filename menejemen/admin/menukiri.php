@@ -19,7 +19,7 @@
             $varMenuName=$datamenu1['menu_name'];
             $varMenuParent=$datamenu1['menu_parent'];?>
             <li class="treeview">
-                <a href="#"><i class="fa fa-tag"></i><?php echo $varMenuName?><span class="fa fa-arrow"></span></a>
+                <a href="#"><i class="fa fa-tag"></i><?php echo $varMenuName?><span class="fa fa-angle-left pull-right"></span></a>
                 <?php
                 //--tonton menu_id berdasarkan levelnya apa
                 $sqlmenu2="select menu_id_fk from trx_level_menu where level_id_fk='".$_SESSION['level_id']."'";
