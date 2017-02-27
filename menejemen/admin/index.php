@@ -1,5 +1,12 @@
 <?php 
     include '../config/inc-db.php';
+    session_start();
+   if (isset($_GET['logout'])) {
+        session_destroy();
+        echo "<script> alert('Anda Berhasil Keluar Aplikasi'); location.href='index.php' </script>";exit;}
+    if (isset($_SESSION['level_name']))
+            { if ($_SESSION['level_name'] == "SA")
+               { 
  ?>
 <!DOCTYPE html>
 <html>
@@ -19,24 +26,25 @@
   <link rel="stylesheet" href="../assets/plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker-bs3.css">
   <link rel="stylesheet" href="../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
+
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
   <?php include 'menuatas.php'; ?>
   <?php include 'menukiri.php'; ?>
+
   <div class="content-wrapper">
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
-    <section class="content">
-    </section>
+   <?php 
+              if(empty( $_GET['hal']) ||  $_GET['hal'] ==""){
+                $_GET['hal'] = "kontentengah.php";
+              }
+              if(file_exists( $_GET['hal'].".php")){
+                include  $_GET['hal'].".php";
+              }else {
+                include"kontentengah.php";
+              }   
+        ?> 
   </div>
   <footer class="main-footer">
     <strong>Copyright &copy; <?php echo date('Y'); ?> SIANTRO UGM - Dita</strong> All rights
@@ -50,7 +58,7 @@
 </script>
 <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="../assets/plugins/morris/morris.min.js"></script>
+<!-- <script src="../assets/plugins/morris/morris.min.js"></script> -->
 <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 <script src="../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="../assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -62,7 +70,26 @@
 <script src="../assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="../assets/plugins/fastclick/fastclick.js"></script>
 <script src="../assets/dist/js/app.min.js"></script>
-<script src="../assets/dist/js/pages/dashboard.js"></script>
+<!-- <script src="../assets/dist/js/pages/dashboard.js"></script> -->
 <script src="../assets/dist/js/demo.js"></script>
+<script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#tableMaster').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>
+<?php
+    }else if ($_SESSION['level_name'] == "koordinator penelitian")
+       {header('location:index.php');}}
+    if (!isset($_SESSION['level_name'])){header('location:../index.php');}
+?>

@@ -13,14 +13,14 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="img/admin.gif" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $_SESSION['operator_username']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
                 <img src="img/admin.gif" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  <?php echo $_SESSION['operator_username']; ?> - <?php echo $_SESSION['level_name']; ?>
                 </p>
               </li>
               <li class="user-footer">
@@ -28,7 +28,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Keluar</a>
+                  <a href="index.php?logout=1" class="btn btn-default btn-flat">Keluar</a>
                 </div>
               </li>
             </ul>
