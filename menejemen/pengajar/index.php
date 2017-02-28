@@ -5,7 +5,7 @@
         session_destroy();
         echo "<script> alert('Anda Berhasil Keluar Aplikasi'); location.href='index.php' </script>";exit;}
     if (isset($_SESSION['level_name']))
-            { if ($_SESSION['level_name'] == "SA")
+            { if ($_SESSION['level_name'] == "Dosen Pengajar")
                { 
  ?>
 <!DOCTYPE html>
@@ -100,7 +100,7 @@
 </body>
 </html>
 <?php
-    }else if ($_SESSION['level_name'] == "Dosen Pengajar")
+    }else if ($_SESSION['level_name'] == "SA")
        {header('location:index.php');}}
     if (!isset($_SESSION['level_name'])){header('location:../index.php');}
 ?>
