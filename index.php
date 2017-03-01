@@ -34,6 +34,7 @@
       }
    ?>
    <?php include 'footer.php'; ?>
+
     <script src="assets/plugins/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/parallax.min.js"></script>
