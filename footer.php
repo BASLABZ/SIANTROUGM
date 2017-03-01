@@ -4,10 +4,14 @@
           <div class="col-md-4 col-sm-6">
             <section class="widget">
               <h3 class="widget-title">Alamat</h3>
-              <p><strong>Lab. Bioantropologi &amp; Paleoantropologi</strong><br>
-              Fakultas Kedokteran Universitas Gadjah Mada<br>
-              Jl. Medika,  Sekip Utara, Sleman, Yogyakarta 55281, Indonesia</p>
-              <p>lab-biopaleo.fk@ugm.ac.id<br>+62 274 552 577</p>
+              <p class="widget-title">
+              <strong>Lab. Bioantropologi &amp; Paleoantropologi</strong>
+              Fakultas Kedokteran Universitas Gadjah Mada</p><br>
+              <i class="fa fa-map-marker"></i>
+              <p class="widget">Jl. Medika,  Sekip Utara, Sleman, Yogyakarta 55281, Indonesia</p>
+              <p>lab-biopaleo.fk@ugm.ac.id</p><br>
+              <i class="fa fa-map-phone"></i>
+              <p>+62 274 552 577</p>
             </section><!-- .widget -->
           </div><!-- .col-## -->
 

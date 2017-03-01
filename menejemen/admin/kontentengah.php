@@ -13,7 +13,7 @@
         <div class="row">
         <div class="col-md-12">
       <div class="callout callout-success">
-        <h4>Selamat Datang Di SIANTRO UGM</h4>
+        <h4>Selamat Datang Di Pelatihan Kursus ANTROPOLOGI FORENSIK UGM</h4>
 
         <p>Add the layout-boxed class to the body tag to get this layout. The boxed layout is helpful when working on
           large screens because it prevents the site from stretching very wide.</p>
