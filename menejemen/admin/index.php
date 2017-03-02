@@ -20,13 +20,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="../assets/plugins/iCheck/flat/blue.css">
+  <!-- <link rel="stylesheet" href="../assets/plugins/iCheck/flat/blue.css"> -->
   <link rel="stylesheet" href="../assets/plugins/morris/morris.css">
   <link rel="stylesheet" href="../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <link rel="stylesheet" href="../assets/plugins/datepicker/datepicker3.css">
   <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker-bs3.css">
   <link rel="stylesheet" href="../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../assets/summerBas/summernote.css">
 
 </head>
 <body class="hold-transition skin-green sidebar-mini">
@@ -74,6 +75,7 @@
 <script src="../assets/dist/js/demo.js"></script>
 <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../assets/summerBas/summernote.min.js"></script>
 <script>
   $(function () {
     $('#tableMaster').DataTable({
@@ -95,6 +97,14 @@
     });
 
   });
+  $(document).ready(function() {
+        $('#summerBas').summernote({
+          height: 300,    
+          minHeight: null,
+          maxHeight: null,
+          focus: true     
+        });
+    });
   
 </script>
 </body>
