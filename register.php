@@ -4,7 +4,7 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <h2 class="text-big text-center marg-40-btm">Sign Up <span class="pe-7s-add-user"></span></h2>
-            <form class="contact-form" action="?hal=register-save" method="post">
+            <form class="contact-form" action="?hal=register-save" method="post" enctype='multipart/form-data'>
               <div class="row">
                 <div class="panel panel-success">
                   <div class="panel-heading">
@@ -26,7 +26,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="phone" class="form-label">No. Telepon</label>
-                        <input type="text" class="form-control form-bordered" placeholder="Masukan nomor telepon" id="phone" name="frm_phone" required="">
+                        <input type="text" class="form-control form-bordered" placeholder="Masukan nomor telepon" id="phone" name="frm_phone" onkeyup="cekphone()" required="">
                       </div><!-- .form-group -->
                     </div><!-- .col-sm-6 -->
                     <div class="col-sm-6">
@@ -66,7 +66,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="kartuprofesi" class="form-label">Dokumen Legalitas Profesi</label>
-                        <input type="file" id="kartuprofesi" class="form-control form-bordered" name="frm_profesioncard">
+                        <input type="file" id="kartuprofesi" class="form-control form-bordered" name="frm_profesioncard" required="" accept="application/pdf, image/jpg, image/png, image/jpeg">
                         *) Dapat dibuktikan dengan scan KTM atau kartu identitas resmi lainnya yang menunjukkan profesi anda. (File : pdf, jpg, png).
                       </div><!-- .form-group -->
                     </div><!-- .col-sm-6 -->                  
@@ -122,4 +122,12 @@
                 pass.value = pass.value.substring(0,pass.value.length-100);
               };
           }
+
+          function cekphone(){
+            var notlp = document.getElementById('phone');
+            if (!/^[0-9]+$/.test(notlp.value)) {
+                notlp.value = notlp.value.substring(0,notlp.value.length-100);
+              };
+          }
+
     </script>
