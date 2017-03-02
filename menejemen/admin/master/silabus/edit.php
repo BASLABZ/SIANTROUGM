@@ -5,7 +5,7 @@ $rowSilabus = mysql_fetch_array($querySilabus);
     if (isset($_POST['ubah'])) {
       if (!empty($_FILES) && $_FILES['silabus_file']['size'] >0 && $_FILES['silabus_file']['error'] == 0){
             $silabus_file = $_FILES['silabus_file']['name'];
-                          $move = move_uploaded_file($_FILES['silabus_file']['tmp_name'], '../upload/materi/'.$silabus_file);
+                          $move = move_uploaded_file($_FILES['silabus_file']['tmp_name'], '../upload/silabus/'.$silabus_file);
 
             if ($move) {
               $queryInsert  = mysql_query("UPDATE ref_silabus set 

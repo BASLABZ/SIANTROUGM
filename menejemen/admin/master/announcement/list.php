@@ -29,27 +29,29 @@
               <table id="tableMaster" class="table table-bordered table-hover">
                 <thead>
                   <th><center>No</center></th>
+                  <th>Judul Pengumuman</th>
+                  <th>Tanggal Posting</th>
                   <th><center>Isi Pengumuman</center></th>
+                  <th>Gambar</th>
                   <th><center>Dibuat Oleh</center></th>
                   <th><center>Action</center></th>
                 </thead>
                 <tbody>
                  <?php 
                   $no = 0;
-                  $queryPengumuman = mysql_query("SELECT announcement_id,announcement_info,operator_name FROM ref_announcement a JOIN ref_operator o ON o.operator_id=a.operator_id_fk order by announcement_id asc");
+                  $queryPengumuman = mysql_query("SELECT announcement_id,announcement_dateofposted,operator_name,announcement_judul,announcement_description,announcement_image,operator_name FROM ref_announcement a JOIN ref_operator o ON o.operator_id=a.operator_id_fk order by announcement_id asc");
                   while ($rowPengumuman = mysql_fetch_array($queryPengumuman)) {
-                    $var_Id= $rowPengumuman['announcement_id'];
-                    $var_Info= $rowPengumuman['announcement_info'];
-                    // $var_opId= $rowPengumuman['operator_id_fk'];
-                    $var_opName = $rowPengumuman['operator_name'];
                   ?>
                   <tr>
                     <td><?php echo ++$no; ?></td>
-                    <td><?php echo $rowPengumuman['announcement_info']; ?></td>
+                    <td><?php echo $rowPengumuman['announcement_judul']; ?></td>
+                    <td><?php echo $rowPengumuman['announcement_dateofposted']; ?></td>
+                    <td><?php echo $rowPengumuman['announcement_description']; ?></td>
+                    <td><img src="../upload/announcement/<?php echo $rowPengumuman['announcement_image']; ?>" class='img-responsive img-thumbnail'></td>
                     <td><?php echo $rowPengumuman['operator_name']; ?></td>
                     
                     <td><center>
-                       <a href="index.php?hal=master/announcement/edit&announcement_id=<?php echo $rowPengumuman['announcement_id']; ?>" class="btn btn-warning btn-sm"><span class="fa fa-edit"></span> Ubah</a>
+                       <a href="index.php?hal=master/announcement/edit&id=<?php echo $rowPengumuman['announcement_id']; ?>" class="btn btn-warning btn-sm"><span class="fa fa-edit"></span> Ubah</a>
                        <a href="index.php?hal=master/announcement/list&hapus=<?php echo $rowPengumuman['announcement_id']; ?>" class="btn btn-danger btn-sm"> <span class="fa fa-trash"></span> Hapus</a>
                        </center>
                     </td>

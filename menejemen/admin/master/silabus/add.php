@@ -2,7 +2,7 @@
     if (isset($_POST['simpan'])) {
       if (!empty($_FILES) && $_FILES['silabus_file']['size'] >0 && $_FILES['silabus_file']['error'] == 0){
             $silabus_file = $_FILES['silabus_file']['name'];
-                          $move = move_uploaded_file($_FILES['silabus_file']['tmp_name'], '../upload/materi/'.$silabus_file);
+                          $move = move_uploaded_file($_FILES['silabus_file']['tmp_name'], '../upload/silabus/'.$silabus_file);
 
             if ($move) {
               $queryInsert  = mysql_query("INSERT INTO ref_silabus (coursename_id_fk,silabus_purpose,
