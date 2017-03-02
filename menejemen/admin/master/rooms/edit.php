@@ -46,7 +46,7 @@
             <div class="form-group row">
               <label class="col-md-4">Keterangan</label>
               <div class="col-md-8">
-                <textarea name="rooms_note" placeholder="Isi keterangan jika diperlukan"><?php echo $rowRuang['rooms_note']; ?></textarea>
+                <textarea name="rooms_note" class="form-control" placeholder="Isi keterangan jika diperlukan"><?php echo $rowRuang['rooms_note']; ?></textarea>
               </div>
             </div> 
             <div class="form-group">
