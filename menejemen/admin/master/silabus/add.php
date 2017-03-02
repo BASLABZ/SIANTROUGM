@@ -79,7 +79,7 @@
               </div>
             </div>
             <div class="form-group row">
-                <label class="col-md-3">File (PDF,WORD,VIDEO)</label>
+                <label class="col-md-3">File</label>
                 <div class="col-md-4">
                   <input type="file" class="form-control" required="" name="silabus_file">
                 </div>
