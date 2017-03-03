@@ -1,6 +1,10 @@
 <?php 
     include 'menejemen/config/inc-db.php';
     session_start();
+     if (isset($_GET['logout'])) {
+         session_destroy();
+         echo "<script> alert('Anda Berhasil Keluar Aplikasi'); location.href='index.php' </script>";exit;
+        }
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +21,7 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/Pe-icon-7-stroke.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+  
   </head>
   <body id="home">
   <?php 
@@ -41,5 +46,6 @@
     <script src="assets/js/navigation.js"></script>
     <script src="assets/plugins/jquery.easing.js"></script>
     <script src="assets/js/script.js"></script>
+   
   </body>
 </html>
