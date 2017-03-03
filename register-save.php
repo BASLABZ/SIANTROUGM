@@ -24,15 +24,17 @@
 	  $acak           = rand(000000,999999);
 	  $nama_file_unik = $acak.$nama_file; 
 	  		
-	  $vdir_upload = "/menejemen/berkas/";
+	  $vdir_upload = "menejemen/upload/berkas/";
 	  $vfile_upload = $vdir_upload . $nama_file_unik;
 	  $tipe_file   = $_FILES['frm_profesioncard']['type'];
 
-	  //Simpan gambar dalam ukuran sebenarnya
-	  move_uploaded_file($_FILES["frm_profesioncard"]["tmp_name"], $vfile_upload);
+	  //	Simpan gambar dalam ukuran sebenarnya
+	  if(move_uploaded_file($_FILES["frm_profesioncard"]["tmp_name"], $vfile_upload)){
 
 
-	$save = "INSERT INTO tbl_member(
+
+
+		$save = "INSERT INTO tbl_member(
 					member_name, 
 					member_useremail, 
 					member_phonenumber,  
@@ -62,14 +64,19 @@
 					'pending',
 					'".date('Y-m-d')."',
 					'N',
-					'".$."'
+					'".$nama_file_unik."'
 
 					)";
 
-	mysql_query($save);
+		mysql_query($save);
 
-	$_SESSION['pesan_sukses'] = 'Terimakasih, anda telah menyelesaikan proses pendaftaran. Kami akan segera mengkonfirmasi data yang anda kirim. Informasi selanjutkan akan kami sampaikan melalui email anda.';
+		$_SESSION['pesan_sukses'] = 'Terimakasih, anda telah menyelesaikan proses pendaftaran. Kami akan segera mengkonfirmasi data yang anda kirim. Informasi selanjutkan akan kami sampaikan melalui email anda.';
 
+	} //if
+
+	else {
+		$_SESSION['pesan_sukses'] = 'Gagal mengupload berkas.';		
+	}
 
  	header('location:index.php');
 
