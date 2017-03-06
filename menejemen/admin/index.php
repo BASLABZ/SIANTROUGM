@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../assets/summerBas/summernote.css">
+  <link rel="stylesheet" href="../assets/plugins/select2/select2.min.css">
 
 </head>
 <body class="hold-transition skin-green sidebar-mini">
@@ -76,8 +77,10 @@
 <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../assets/summerBas/summernote.min.js"></script>
+<script src="../assets/plugins/select2/select2.full.min.js"></script>
 <script>
   $(function () {
+    $('.select').select2();
     $('#tableMaster').DataTable({
       "paging": true,
       "lengthChange": true,
