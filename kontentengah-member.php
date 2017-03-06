@@ -153,10 +153,11 @@
     <!-- end:cta -->
 
     <!-- Notice Alert -->
-
     <?php 
       if ($_SESSION['pesan_sukses']!='') {
         echo "<script> alert('".$_SESSION['pesan_sukses']."') </script>";
         unset($_SESSION['pesan_sukses']);
       }
     ?>
+    <!-- //Notice Alert -->
+    fsdkfjsdkjfkdsjfkdsjfkdsjfkdsjf
