@@ -64,7 +64,7 @@
                      </td>
                      <td><?php echo $rowMember['member_position']; ?></td>
                      <td>
-                       <a href="" class="btn btn-info btn-sm"><span class="fa fa-eye"></span> Lihat Data</a>
+                       <a href="index.php?hal=member/edit&member_id=<?php echo $rowMember['member_id'] ?>" class="btn btn-info btn-sm"><span class="fa fa-eye"></span> Lihat Data</a>
                      </td>
 
 
