@@ -1,3 +1,14 @@
+<?php 
+  
+  //cek data akun sdh lengkap belum
+  $cek = mysql_query("SELECT member_address FROM tbl_member WHERE member_id='".$_SESSION['member_id']."' ");
+  $n_cek = mysql_fetch_array($cek);
+  if ($n_cek['member_address']=='') {
+    echo "<script> alert('Mohon lengkapi data akun terlebih dahulu'); location.href='index.php?hal=settingakun';</script>  ";exit;
+  }
+
+?>
+
 
     <div id="process" class="process content-section bg-light">
       <div class="container">
