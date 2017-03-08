@@ -30,56 +30,29 @@
                             <body>
 
                             <!-- body -->
-                            <table style='padding: 20px;
-                              width: 100%;'>
+                            <table style='padding: 20px; width: 100%;'>
                               <tr>
                                 <td></td>
-                                <td class='container' style='padding: 20px; clear: both !important;
-                              display: block !important;
-                              Margin: 0 auto !important;
-                              max-width: 600px !important;'>
+                                <td>
 
                                   <!-- content -->
-                                  <div class='content' style='display: block;
-                              margin: 0 auto;
-                              max-width: 600px'>
+                                  <div style='display: block; margin: 0 auto; max-width: 600px'>
                                   <table>
                                     <tr>
                                       <td>
                                         <h2>Konfirmasi Pendaftaran</h2><br/>
                                         <p>Hi <?php echo $var_membername; ?>,</p>
                                         <p>
-                                            Terima kasih sudah mendaftar untuk bergabung dengan Paleoantropologi UGM. Data Anda telah kami verifikasi, untuk mengaktifkan akun Anda, mohon lakukan aktifasi melalui tombol dibawah ini :
+                                            Mohon maaf kami sampaikan bahwa permohonan pendaftaran yang Anda ajukan untuk menjadi anggota Paleo UGM telah kami tolak dikarenakan <b>".$_POST['frm_Tmemberalasantolak']."</b> <br/><br/>
+
+                                            Permohonan pendaftaran yang diajukan, kami nilai berdasarkan tingkat kepentingan instansi Anda dalam melakukan pemesanan replika fosil.
                                         </p>
-                                        <!-- button -->
-                                        <center>
-                                        <table class='btn-primary' cellpadding='0' cellspacing='0' border='0'>
-                                          <tr>
-                                            <td>
-                                              <a href='http://localhost/siantrougm/index.php?id=<?php echo $var_memberid; ?>' style='background-color: #18BC9C;
-                                                  border: solid 1px #18BC9C;
-                                                  border-radius: 25px;
-                                                  border-width: 10px 20px;
-                                                  display: inline-block;
-                                                  color: #ffffff;
-                                                  cursor: pointer;
-                                                  font-weight: bold;
-                                                  line-height: 2;
-                                                  text-decoration: none;'>Aktifkan Akun Anda</a>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                        </center>
-                                        <!-- /button -->
+                                        
                                         <br/>
-                                        <p>Jika tombol di atas tidak berfungsi silakan klik link di bawah ini</p>
-                                        <p><a href='http://localhost/siantrougm/index.php?id=<?php echo $var_memberid; ?>'>http://localhost/siantrougm/index.php?id=<?php echo $var_memberid; ?></a></p>
-                                        <p>
-                                          Mohon lakukan aktifasi sebelum <?php date('Y-m-d', strtotime('+7 days')) ?>
-                                        </p>
+                                        
                                         <br/><br/>
                                         <p><i>Email ini dibuat secara otomatis. Mohon tidak mengirimkan balasan ke email ini.</i></p>
-                                        <hr style='border-top: 1px solid #18BC9C;'>
+                                        <hr>
                                         <p align='right'>Copyright &copy; Paleoantropologi UGM 2017</p>
                                       </td>
                                     </tr>
@@ -120,49 +93,30 @@
 
                             </head>
 
-                            <body bgcolor='#f6f6f6' style='font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
-                              font-size: 100%;
-                              line-height: 1.6em;
-                              margin: 0;
-                              padding: 0;'>
+                            <body>
 
                             <!-- body -->
-                            <table class='body-wrap' bgcolor='#f6f6f6' style='padding: 20px;
-                              width: 100%;' bgcolor='#f6f6f6'>
+                            <table style='padding: 20px; width: 100%;'>
                               <tr>
                                 <td></td>
-                                <td class='container' bgcolor='#FFFFFF' style='padding: 20px; clear: both !important;
-                              display: block !important;
-                              Margin: 0 auto !important;
-                              max-width: 600px !important;'>
+                                <td>
 
                                   <!-- content -->
-                                  <div class='content' style='display: block;
-                              margin: 0 auto;
-                              max-width: 600px'>
+                                  <div style='display: block; margin: 0 auto; max-width: 600px'>
                                   <table>
                                     <tr>
                                       <td>
-                                        <h2>Konfirmasi Pendaftaran</h2><hr style='border-top: 3px solid #18BC9C;'><br/>
+                                        <h2>Konfirmasi Pendaftaran</h2><br/>
                                         <p>Hi <?php echo $var_membername; ?>,</p>
                                         <p>
                                             Terima kasih sudah mendaftar untuk bergabung dengan Paleoantropologi UGM. Data Anda telah kami verifikasi, untuk mengaktifkan akun Anda, mohon lakukan aktifasi melalui tombol dibawah ini :
                                         </p>
                                         <!-- button -->
                                         <center>
-                                        <table class='btn-primary' cellpadding='0' cellspacing='0' border='0'>
+                                        <table class='table' cellpadding='0' cellspacing='0' border='0'>
                                           <tr>
                                             <td>
-                                              <a href='http://localhost/siantrougm/index.php?id=<?php echo $var_memberid; ?>' style='background-color: #18BC9C;
-                                                  border: solid 1px #18BC9C;
-                                                  border-radius: 25px;
-                                                  border-width: 10px 20px;
-                                                  display: inline-block;
-                                                  color: #ffffff;
-                                                  cursor: pointer;
-                                                  font-weight: bold;
-                                                  line-height: 2;
-                                                  text-decoration: none;'>Aktifkan Akun Anda</a>
+                                              <a href='http://localhost/siantrougm/index.php?id=<?php echo $var_memberid; ?>' class='btn btn-success'>Aktifkan Akun Anda</a>
                                             </td>
                                           </tr>
                                         </table>
@@ -176,7 +130,7 @@
                                         </p>
                                         <br/><br/>
                                         <p><i>Email ini dibuat secara otomatis. Mohon tidak mengirimkan balasan ke email ini.</i></p>
-                                        <hr style='border-top: 1px solid #18BC9C;'>
+                                        <hr>
                                         <p align='right'>Copyright &copy; Paleoantropologi UGM 2017</p>
                                       </td>
                                     </tr>
@@ -199,6 +153,7 @@
            // echo "Email sent";
        else
            // echo "Email sending failed";
+
 
       $_SESSION['pesan_sukses'] = 'Konfirmasi penerimaan berhasil dikirim';      
     }

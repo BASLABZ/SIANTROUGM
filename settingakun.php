@@ -9,19 +9,44 @@
 
             if ($move) {
               $queryInsert  = mysql_query("UPDATE tbl_member set 
-                                                            member_name='".$_POST['frm_name']."',
-                                                            announcement_description='".$_POST['announcement_description']."',
-                                                            announcement_image='".$announcement_image."',
-                                                            announcement_dateofposted = NOW()
-                                                            where announcement_id = '".$id."'");
+                                                  member_name='".$_POST['frm_name']."',
+                                                  member_address='".$_POST['frm_address']."',
+                                                  member_useremail='".$_POST['frm_email']."',                  
+                                                  member_phonenumber='".$_POST['frm_phone']."',
+                                                  member_password='".$_POST['frm_password']."',
+                                                  member_placeofbirth='".$_POST['frm_placeofbirth']."',
+                                                  member_dateofbirth='".$_POST['frm_dateofbirth']."',
+                                                  member_gender='".$_POST['frm_gender']."',
+                                                  member_religion='".$_POST['frm_religion']."',
+                                                  member_position='".$_POST['frm_position']."',
+                                                  member_institution='".$_POST['frm_instansi']."',
+                                                  member_skill='".$_POST['frm_keahlian']."',
+                                                  member_image='".$var_memberimage."',
+                                                  member_hint_question='".$_POST['frm_question']."',
+                                                  member_answer_question='".$_POST['frm_answer']."'
+                                            WHERE member_id='".$_SESSION['member_id']."'
+
+                                          ");
 
             }else{
                 $queryInsert  = mysql_query("UPDATE tbl_member set 
-                                                              announcement_judul='".$_POST['announcement_judul']."',
-                                                              announcement_description='".$_POST['announcement_description']."',
-                                                              announcement_image='',
-                                                              announcement_dateofposted = NOW()
-                                                              where announcement_id = '".$id."'");              
+                                                  member_name='".$_POST['frm_name']."',
+                                                  member_address='".$_POST['frm_address']."',
+                                                  member_useremail='".$_POST['frm_email']."',                  
+                                                  member_phonenumber='".$_POST['frm_phone']."',
+                                                  member_password='".$_POST['frm_password']."',
+                                                  member_placeofbirth='".$_POST['frm_placeofbirth']."',
+                                                  member_dateofbirth='".$_POST['frm_dateofbirth']."',
+                                                  member_gender='".$_POST['frm_gender']."',
+                                                  member_religion='".$_POST['frm_religion']."',
+                                                  member_position='".$_POST['frm_position']."',
+                                                  member_institution='".$_POST['frm_instansi']."',
+                                                  member_skill='".$_POST['frm_keahlian']."',
+                                                  member_image='".$var_memberimage."',
+                                                  member_hint_question='".$_POST['frm_question']."',
+                                                  member_answer_question='".$_POST['frm_answer']."'
+                                            WHERE member_id='".$_SESSION['member_id']."'");              
+            
             }
 
       }
@@ -111,7 +136,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="image" class="form-label">Foto Diri</label><br/>
-                        <img src="menejemen/upload/berkas/<?php echo $m['member_image']; ?>" width="200px" height="250px" alt="Foto Diri" style="border: solid 1px #ddd">
+                        <img src="menejemen/upload/memberimage/<?php echo $m['member_image']; ?>" width="200px" height="250px" alt="Foto Diri" style="border: solid 1px #ddd">
                         <input type="file" id="memberimage" class="form-control form-bordered" name="frm_memberimage">
                       </div><!-- .form-group -->
                     </div><!-- .col-sm-6 -->
@@ -183,7 +208,7 @@
                   </div>
                 </div>
                 <div class="col-sm-12 marg-20-top">
-                  <button type="submit" class="button btn-square" name="perbarui" disabled="">Simpan Perubahan</button>
+                  <button type="submit" class="button btn-square" name="perbarui">Simpan Perubahan</button>
                 </div>
               </div><!-- .row -->
             </form>
