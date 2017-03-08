@@ -31,9 +31,6 @@
 	  //	Simpan gambar dalam ukuran sebenarnya
 	  if(move_uploaded_file($_FILES["frm_profesioncard"]["tmp_name"], $vfile_upload)){
 
-
-
-
 		$save = "INSERT INTO tbl_member(
 					member_name, 
 					member_useremail, 
@@ -49,7 +46,7 @@
 					member_levelid_fk,
 					member_register_date,
 					member_status_login,
-					member_doc,
+					member_doc
 
 					)
 
@@ -74,14 +71,11 @@
 
 		mysql_query($save);
 
-		$_SESSION['pesan_sukses'] = 'Terimakasih, anda telah menyelesaikan proses pendaftaran. Kami akan segera mengkonfirmasi data yang anda kirim. Informasi selanjutkan akan kami sampaikan melalui email anda.';
-
+		echo "<script> alert('Terimakasih, anda telah menyelesaikan proses pendaftaran. Kami akan segera mengkonfirmasi data yang anda kirim. Informasi selanjutkan akan kami sampaikan melalui email anda.'); location.href='index.php' </script>";exit;
 	} //if
 
 	else {
-		$_SESSION['pesan_sukses'] = 'Gagal mengupload berkas.';		
+		echo "<script> alert('Gagal mengupload berkas, mohon ulangi pendaftaran.'); location.href='index.php' </script>";exit;		
 	}
-
- 	header('location:index.php');
 
 ?>

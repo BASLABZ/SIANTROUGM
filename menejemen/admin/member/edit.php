@@ -71,10 +71,8 @@
       $headers  = 'From: ambardhanes@gmail.com' . "\r\n" .
                   'MIME-Version: 1.0' . "\r\n" .
                   'Content-type: text/html; charset=utf-8';
-       if(mail($to, $subject, $message, $headers))
-           // echo "Email sent";
-       else
-           // echo "Email sending failed";
+      mail($to, $subject, $message, $headers);
+           
 
 
       $_SESSION['pesan_sukses'] = 'Konfirmasi penolakan berhasil dikirim';
@@ -149,11 +147,8 @@
       $headers  = 'From: ambardhanes@gmail.com' . "\r\n" .
                   'MIME-Version: 1.0' . "\r\n" .
                   'Content-type: text/html; charset=utf-8';
-       if(mail($to, $subject, $message, $headers))
-           // echo "Email sent";
-       else
-           // echo "Email sending failed";
-
+       mail($to, $subject, $message, $headers);
+       
 
       $_SESSION['pesan_sukses'] = 'Konfirmasi penerimaan berhasil dikirim';      
     }
