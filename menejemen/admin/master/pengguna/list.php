@@ -44,8 +44,8 @@
                      <td><?php echo $rowOperator['operator_email']; ?></td>
                      <td><?php echo $rowOperator['level_name']; ?></td>
                      <td>
-                       <a href="" class="btn btn-warning btn-sm"><span class="fa fa-edit"></span> Ubah</a>
-                       <a href="" class="btn btn-danger btn-sm"> <span class="fa fa-trash"></span> Hapus</a>
+                       <a href="index.php?hal=master/pengguna/edit&id=<?php echo $rowOperator['operator_id']; ?>" class="btn btn-warning btn-sm"><span class="fa fa-edit"></span> Ubah</a>
+                       <a href="index.php?hal=master/pengguna/edit&id=<?php echo $rowOperator['operator_id']; ?>" class="btn btn-danger btn-sm"> <span class="fa fa-trash"></span> Hapus</a>
                      </td>
                    </tr>
                    <?php } ?>

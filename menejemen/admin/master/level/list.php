@@ -54,13 +54,13 @@
                               if($var_row==0){ // jika belum terisi
                         ?>
                             <!-- maka tulisan pada link berubah menjadi isi fasilitas -->
-                            <a href="index.php?hal=master/level/levelmenu-add&level_id=<?php echo $var_Id; ?>"><button type="button" class="btn btn-success btn-xs"> Isi Fasilitas</button></a></center></td> 
+                            <a href="index.php?hal=master/level/lm-add&level_id=<?php echo $var_Id; ?>"><button type="button" class="btn btn-success btn-xs"> Isi Fasilitas</button></a></center></td> 
                         <?php      
                                 } else // jika sudah
                                     {
                         ?>
                                   <!-- //maka link berubah menjadi edit -->
-                                  <a href="index.php?hal=master/level/levelmenu-edit&level_id=<?php echo $var_Id; ?>"><button type="button" class="btn btn-primary btn-xs"> Edit Fasilitas</button></a></center></td>
+                                  <a href="index.php?hal=master/level/lm-edit&level_id=<?php echo $var_Id; ?>"><button type="button" class="btn btn-primary btn-xs"> Edit Fasilitas</button></a></center></td>
                         <?php  
                                     }//tutup else
                         ?>

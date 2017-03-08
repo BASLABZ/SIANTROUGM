@@ -62,8 +62,8 @@
                         $varMenuid=$datamenu['menu_id'];
                         $varMenuname=$datamenu['menu_name']; ?>
                         <option value="<?php echo $varMenuid ?>"
-                                                <?php if($varMenuid==$rowMenu['menu_parent']){echo "selected=selected";}?>><?php  echo $varMenuname; ?>
-                                            </option>
+                            <?php if($varMenuid==$rowMenu['menu_parent']){echo "selected=selected";}?>><?php  echo $varMenuname; ?>
+                        </option>
                     <?php 
                       }//tutup while
                     ?>

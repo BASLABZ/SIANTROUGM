@@ -8,7 +8,7 @@ $rowMateri = mysql_fetch_array($queryRowMateri);
                           $move = move_uploaded_file($_FILES['coursematerial_file']['tmp_name'], '../upload/materi/'.$coursematerial_file);
 
             if ($move) {
-              $queryInsert  = mysql_query("UPDATE trx_coursematerial SET 
+              $queryUpdate  = mysql_query("UPDATE trx_coursematerial SET 
                                     coursematerial_title = '".$_POST['coursematerial_title']."',
                                     coursematerial_file = '".$coursematerial_file."',
                                     coursematerial_description = '".$_POST['coursematerial_description']."',
@@ -34,7 +34,7 @@ $rowMateri = mysql_fetch_array($queryRowMateri);
 
 
       }
-      if ($queryInsert) {
+      if ($queryUpdate) {
          echo "<script> alert('Data Berhasil Disimpan'); location.href='index.php?hal=master/materi/list' </script>";exit;
       }
     }
