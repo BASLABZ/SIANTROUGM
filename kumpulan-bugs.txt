@@ -1,0 +1,2 @@
+bugs from dhanes :
+1. (settingakun.php) -> bagian tanggal lahir gagal update

@@ -13,7 +13,7 @@
       $to = $rowMember['member_useremail'];
 
     if (isset($_POST['tolak'])) {
-      mysql_query("UPDATE tbl_member SET member_status_active='ignore' WHERE member_id='".$idmember."' ");
+      mysql_query("UPDATE tbl_member SET member_status_active='ignore', member_confirm_date='NOW()' WHERE member_id='".$idmember."' ");
 
 
       //kirim email lokal 
@@ -81,7 +81,7 @@
     }
 
     if (isset($_POST['terima'])) {
-      mysql_query("UPDATE tbl_member SET member_status_active='inactive' WHERE member_id='".$idmember."' ");
+      mysql_query("UPDATE tbl_member SET member_status_active='inactive', member_confirm_date='NOW' WHERE member_id='".$idmember."' ");
 
       $subject  = 'Testing sendmail.exe';
       $message  = "<!doctype html>

@@ -46,9 +46,12 @@
 					member_hint_question, 
 					member_answer_question,
 					member_status_active,
+					member_levelid_fk,
 					member_register_date,
 					member_status_login,
-					member_doc)
+					member_doc,
+
+					)
 
 				VALUES(
 					'".$var_name."',
@@ -62,6 +65,7 @@
 					'".$var_question."',
 					'".$var_answer."',
 					'pending',
+					'6',
 					'".date('Y-m-d')."',
 					'N',
 					'".$nama_file_unik."'

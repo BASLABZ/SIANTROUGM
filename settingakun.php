@@ -3,6 +3,7 @@
     $m = mysql_fetch_array($member);
 
     if (isset($_POST['perbarui'])) {
+
       if (!empty($_FILES) && $_FILES['frm_memberimage']['size'] >0 && $_FILES['frm_memberimage']['error'] == 0){
             $var_memberimage = $_FILES['frm_memberimage']['name'];
                           $move = move_uploaded_file($_FILES['frm_memberimage']['tmp_name'], 'menejemen/upload/memberimage/'.$var_memberimage);
@@ -13,7 +14,7 @@
                                                   member_address='".$_POST['frm_address']."',
                                                   member_useremail='".$_POST['frm_email']."',                  
                                                   member_phonenumber='".$_POST['frm_phone']."',
-                                                  member_password='".$_POST['frm_password']."',
+                                                  member_password='".md5($_POST['frm_password'])."',
                                                   member_placeofbirth='".$_POST['frm_placeofbirth']."',
                                                   member_dateofbirth='".$_POST['frm_dateofbirth']."',
                                                   member_gender='".$_POST['frm_gender']."',
@@ -34,7 +35,7 @@
                                                   member_address='".$_POST['frm_address']."',
                                                   member_useremail='".$_POST['frm_email']."',                  
                                                   member_phonenumber='".$_POST['frm_phone']."',
-                                                  member_password='".$_POST['frm_password']."',
+                                                  member_password='".md5($_POST['frm_password'])."',
                                                   member_placeofbirth='".$_POST['frm_placeofbirth']."',
                                                   member_dateofbirth='".$_POST['frm_dateofbirth']."',
                                                   member_gender='".$_POST['frm_gender']."',
@@ -42,14 +43,31 @@
                                                   member_position='".$_POST['frm_position']."',
                                                   member_institution='".$_POST['frm_instansi']."',
                                                   member_skill='".$_POST['frm_keahlian']."',
-                                                  member_image='".$var_memberimage."',
                                                   member_hint_question='".$_POST['frm_question']."',
                                                   member_answer_question='".$_POST['frm_answer']."'
                                             WHERE member_id='".$_SESSION['member_id']."'");              
             
             }
 
+      } else {
+          $queryInsert  = mysql_query("UPDATE tbl_member set 
+                                                  member_name='".$_POST['frm_name']."',
+                                                  member_address='".$_POST['frm_address']."',
+                                                  member_useremail='".$_POST['frm_email']."',                  
+                                                  member_phonenumber='".$_POST['frm_phone']."',
+                                                  member_password='".md5($_POST['frm_password'])."',
+                                                  member_placeofbirth='".$_POST['frm_placeofbirth']."',
+                                                  member_dateofbirth='".$_POST['frm_dateofbirth']."',
+                                                  member_gender='".$_POST['frm_gender']."',
+                                                  member_religion='".$_POST['frm_religion']."',
+                                                  member_position='".$_POST['frm_position']."',
+                                                  member_institution='".$_POST['frm_instansi']."',
+                                                  member_skill='".$_POST['frm_keahlian']."',
+                                                  member_hint_question='".$_POST['frm_question']."',
+                                                  member_answer_question='".$_POST['frm_answer']."'
+                                            WHERE member_id='".$_SESSION['member_id']."'");
       }
+
       if ($queryInsert) {
          echo "<script> alert('Data Berhasil Diperbarui'); location.href='index.php?hal=settingakun' </script>";exit;
       }
@@ -119,11 +137,11 @@
                         <label for="religion" class="form-label">Agama</label>
                         <select name="frm_religion" id="religion" class="form-control form-bordered">
                           <option><?php echo $m['member_religion']; ?></option>
-                          <option>Islam</option>
-                          <option>Katolik</option>
-                          <option>Kristen</option>
-                          <option>Hindu</option>
-                          <option>Budha</option>
+                          <option value="islam">Islam</option>
+                          <option value="katolik">Katolik</option>
+                          <option value="kristen">Kristen</option>
+                          <option value="hindu">Hindu</option>
+                          <option value="budha">Budha</option>
                         </select>
                       </div><!-- .form-group -->
                     </div><!-- .col-sm-6 -->
