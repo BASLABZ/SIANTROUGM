@@ -153,7 +153,7 @@
       $_SESSION['pesan_sukses'] = 'Konfirmasi penerimaan berhasil dikirim';      
     }
  ?>
-  <section class="content-header">
+  <section class="content-header" style="">
       <h1>
         Detail Data Member
         
@@ -180,22 +180,22 @@
               <div class="col-md-12">
                 <label class="col-md-2">Nama Member</label>
               <div class="col-md-4">
-                <input type="text"  class="form-control" name="member_name" placeholder="Nama Member"
-                value="<?php echo $rowTrainer['member_name']; ?>">
+                <input type="text"  class="form-control" name="member_name" readonly="Nama Member"
+                value="<?php echo $rowMember['member_name']; ?>">
               </div>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-md-6">
-              <label class="col-md-4">Username</label>
+              <label class="col-md-4">User Email</label>
               <div class="col-md-8">
-                <input type="text"  class="form-control" name="member_username" placeholder="Username Member" value="<?php echo $rowTrainer['member_username']; ?>">
+                <input type="text"  class="form-control" name="member_useremail" readonly value="<?php echo $rowMember['member_useremail']; ?>">
               </div>
               </div>
               <div class="col-md-6">
               <label class="col-md-4">Password</label>
               <div class="col-md-8">
-                <input type="password"  class="form-control" name="member_password" placeholder="Password Member" value="<?php echo $rowTrainer['member_password']; ?>">
+                <input type="password"  class="form-control" name="member_password" readonly value="<?php echo $rowMember['member_password']; ?>">
               </div>
               </div>
             </div>
@@ -203,15 +203,15 @@
               <div class="col-md-6">
               <label class="col-md-4">Tempat Lahir</label>
               <div class="col-md-8">
-               <textarea class="form-control"  name="trainer_placeofbirth" ="" placeholder="Tempat Lahir" >
-                 <?php echo $rowTrainer['trainer_placeofbirth']; ?>
+               <textarea class="form-control"  name="member_placeofbirth" readonly style="resize:none">
+                 <?php echo $rowMember['member_placeofbirth']; ?>
                </textarea>
               </div>
               </div>
               <div class="col-md-6">
               <label class="col-md-4">Tanggal Lahir</label>
               <div class="col-md-8">
-                <input type="date"  class="form-control" name="trainer_dateofbirth" placeholder=" Tanggal Lahir" value="<?php echo $rowTrainer['trainer_dateofbirth']; ?>">
+                <input type="date"  class="form-control" name="member_dateofbirth" readonly value="<?php echo $rowMember['member_dateofbirth']; ?>">
               </div>
               </div>
             </div>
@@ -219,14 +219,8 @@
               <div class="col-md-6">
               <label class="col-md-4">Agama</label>
               <div class="col-md-8">
-               <select class="form-control" name="trainer_religion" ="">
-                 <option value="">Pilih Agama</option>
-                 <option value="Islam">Islam</option>
-                 <option value="Kristen">Kristen</option>
-                 <option value="Budha">Budha</option>
-                 <option value="Hindu">Hindu</option>
-                 <option value="Protestan">Protestan</option>
-                 <option value="Lainnya">Lainnya</option>
+               <select class="form-control" name="member_religion" readonly>
+                 <option value="<?php echo $rowMember['member_religion']; ?>"><?php echo $rowMember['member_religion']; ?></option>
                </select>
               </div>
               </div>
@@ -234,10 +228,8 @@
               <label class="col-md-4">Jenis Kelamin</label>
 
               <div class="col-md-8">
-              <select class="form-control" name="trainer_gender">
-                <option value="">Pilih Jenis Kelamin</option>
-                <option value="Pria">Pria</option>
-                <option value="Wanita">Wanita</option>
+              <select class="form-control" name="member_gender" readonly>
+                <option value="<?php echo $rowMember['member_gender']; ?>"><?php echo $rowMember['member_gender']; ?></option>
               </select>
               </div>
               </div>
@@ -246,27 +238,27 @@
               <div class="col-md-6">
               <label class="col-md-4">Alamat</label>
               <div class="col-md-8">
-                <textarea class="form-control" name="trainer_address" =""><?php echo $rowTrainer['trainer_address']; ?></textarea>
+                <textarea class="form-control" name="member_address" readonly style="resize:none"><?php echo $rowMember['member_address']; ?></textarea>
               </div>
               </div>
               <div class="col-md-6">
               <label class="col-md-4">No.Telp</label>
               <div class="col-md-8">
-                <input type="number"  class="form-control" name="trainer_phonenumber" placeholder="No Telp Trainer" value="<?php echo $rowTrainer['trainer_phonenumber']; ?>">
+                <input type="number"  class="form-control" name="member_phonenumber" readonly value="<?php echo $rowMember['member_phonenumber']; ?>">
               </div>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-md-6">
-              <label class="col-md-4">Email</label>
+              <label class="col-md-4">Instansi</label>
               <div class="col-md-8">
-                <input type="email" value="<?php echo $rowTrainer['trainer_email']; ?>" class="form-control" name="trainer_email" ="" placeholder="email">
+                <input type="text" value="<?php echo $rowMember['member_institution']; ?>" class="form-control" name="member_institution" readonly>
               </div>
               </div>
               <div class="col-md-6">
-              <label class="col-md-4">Website</label>
+              <label class="col-md-4">Bidang</label>
               <div class="col-md-8">
-                <input type="text" value="<?php echo $rowTrainer['trainer_website']; ?>"  class="form-control" name="trainer_website" placeholder="http:">
+                <input type="text" value="<?php echo $rowMember['member_skill']; ?>"  class="form-control" name="member_skill" readonly>
               </div>
               </div>
             </div>
@@ -274,14 +266,16 @@
               <div class="col-md-6">
               <label class="col-md-4">Jabatan</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" value="<?php echo $rowTrainer['trainer_position']; ?>" name="trainer_position" ="" placeholder="Jabatan">
+                <input type="text" class="form-control" value="<?php echo $rowMember['member_position']; ?>" name="member_position" readonly>
               </div>
               </div>
               <div class="col-md-6">
-              <label class="col-md-4">Upload</label>
+              <label class="col-md-4">Kartu Identitas Profesi</label>
               <div class="col-md-8">
                 
-                <input type="file" name="trainer_image">
+                  <img src="../upload/berkas/<?php echo $rowMember['member_doc']; ?>"  class="img-responsive img-thumbnail"><br/>
+                  <a href="">View Thumbnail</a> <!-- maaf belum sempat dibikin :( -->
+                
               </div>
               </div>
             </div>
@@ -300,9 +294,10 @@
       </div>
     </div>
     <div class="col-md-2">
-      <img src="../upload/berkas/<?php echo $rowMember['member_image']; ?>"  class="img-responsive img-thumbnail">
+      <img src="../upload/memberimage/<?php echo $rowMember['member_image']; ?>"  class="img-responsive img-thumbnail">
     </div>
   </section>
+
 
   <?php 
     if ($_SESSION['pesan_sukses']!='') {
