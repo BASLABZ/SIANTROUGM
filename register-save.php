@@ -76,8 +76,9 @@
 
 		//fungsi sendmail
 		include 'content_mail.php'; //include ja biar ringkes
-		mail($var_email, "Aktivasi Akun SiantroUGM", $pesan, $headers);
 		
+		// mail($var_email, "Aktivasi Akun SiantroUGM", $pesan, $headers);
+		//sementara aku matikan fungsi sendmail nya.	
 
 		//================= BUG BUG BUG BUG BUG =====================//
 
