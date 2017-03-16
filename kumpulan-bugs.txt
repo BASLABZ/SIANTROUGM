@@ -1,2 +1,8 @@
 bugs from dhanes :
-1. (settingakun.php) -> bagian tanggal lahir gagal update
+1. (settingakun.php) -> # bagian tanggal lahir gagal update
+						# lihat detail belum dikasih link preview pdf / gambar 
+						# Oya, belum dicegatin nek misal dia belum ngisi semua form masih bisa pindah halaman (atau lari-lari) :v
+
+2. (content_mail.php) -> ini bukan bug tapi header from nya masih pake emailku, tolong kamu ganti emailmu ya mak. lalu link aktivasinya sementara masih localhost, kalo mau hosting jgn lupa diganti.
+
+3. (register-save.php) -> njepat, proses registrasi terhenti di halaman ini. cek filenya, ada penjelasan lebih detail.
