@@ -1,9 +1,17 @@
 <?php 
     if (isset($_POST['simpan'])) {
-      $query = mysql_query("INSERT INTO ref_coursename
+      if ($_POST['coursename_status']=='opened') {
+        $query = mysql_query("INSERT INTO ref_coursename
+                                           (coursename_title, coursename_date, coursename_info,
+                                            coursename_price, coursename_quota, coursename_status) 
+                              VALUES ('".$_POST['coursename_title']."', NOW(), '".$_POST['coursename_info']."', '".$_POST['coursename_price']."', '".$_POST['coursename_quota']."', 'opened')");  
+      }else{
+        $query = mysql_query("INSERT INTO ref_coursename
                                            (coursename_title, coursename_date, coursename_info,
                                             coursename_price, coursename_quota, coursename_status) 
                               VALUES ('".$_POST['coursename_title']."', NOW(), '".$_POST['coursename_info']."', '".$_POST['coursename_price']."', '".$_POST['coursename_quota']."', '".$_POST['coursename_status']."')");
+      }
+      
       if ($query) {
             echo "<script> alert('Terimakasih Data Berhasil Disimpan'); location.href='index.php?hal=master/kursus/list' </script>";exit;
        } 
@@ -56,9 +64,8 @@
               <label class="col-md-3">Status Kursus</label>
               <div class="col-md-4">
                 <select class="form-control" name="coursename_status">
-                  <option value="">Pilih status</option>
+                  <option>Pilih status</option>
                   <option value="opened">BUKA</option>
-                  <option value="clossed">TUTUP</option>
                   <option value="upcoming">AKAN DIBUKA</option>
                 </select>
               </div>

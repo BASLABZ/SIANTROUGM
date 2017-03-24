@@ -1,21 +1,24 @@
-
-    <div id="process" class="process content-section bg-light">
-      <div class="container">
+  <section class="content-header">
+      <h1>
+         Pembayaran
         
-        <div class="row">
-
-          <div class="col-md-12">
-            <div class="process-item highlight text-center">
-              <div class="process-item-icon">
-               <h1 class="process-item-title">
-              <span class="fa fa-file"></span>DAFTAR TRANSAKSI PEMBAYARAN / HISTORI : 
-               </h1>
-           
-              </div>
-              <div class="process-item-content"> 
-              <p align="right"><a href="" class="btn btn-success btn-lg"><span class="fa fa-print"></span> Cetak Histori pembayaran</a></p>
-              <table class="table table-resposive table-hover table-bordered">
-                <thead>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Transaksi</a></li>
+        <li class="active">Pembayaran</li>
+      </ol>
+  </section>
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Daftar Data Transaksi  Pembayaran</h3>
+            </div>
+            <div class="box-body">
+              <table id="tableMaster" class="table table-bordered table-hover">
+               <thead>
                   <th>No</th>
                   <th>Invoice</th>
                   <th>Tanggal Input</th>
@@ -27,7 +30,6 @@
                   <th>Tagihan</th>
                   <th>Jumlah Bayar</th>
                   <th>Keterangan</th>
-                  <th>Keterangan Dari Aadmin</th>
                   <th>Aksi</th>
                 </thead>
                 <tbody>
@@ -38,7 +40,7 @@
                         t.trainee_id = tx.trainee_id_fk JOIN 
                           ref_coursename c ON
                         c.coursename_id = tx.coursename_id_fk
-                       JOIN tbl_member m ON t.member_id_fk = m.member_id where m.member_id = '".$_SESSION['member_id']."'");
+                       JOIN tbl_member m ON t.member_id_fk = m.member_id ");
                       while ($roPembayaran = mysql_fetch_array($queryPembayaran)) {
                    ?>
                    <?php 
@@ -59,18 +61,13 @@
                      <td><?php echo $totalPembayaran; ?></td>
                      <td><?php echo $roPembayaran['amount_transfer']; ?></td>
                      <td><?php echo $roPembayaran['confirmation_note']; ?></td>
-                     <td><?php echo $roPembayaran['catatan_pembayaran_konfirmasi']; ?></td>
-                     <td><a href="" class="btn btn-info"><span class="fa fa-print"></span> Cetak</a></td>
+                     <td><a href="index.php?hal=pembayaran/verifikasi_pembayaran&id=<?php echo $roPembayaran['confirmation_id']; ?>" class="btn btn-success"><span class="fa fa-pencil"></span> Verifikasi</a></td>
                    </tr>
                    <?php } ?>
                 </tbody>
               </table>
-                
-              </div>
             </div>
           </div>
-          
         </div>
       </div>
-    </div>
-  
+    </section>

@@ -63,3 +63,18 @@
    
   </body>
 </html>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#detail_paket').on('show.bs.modal', function (e) {
+            var rowid = $(e.relatedTarget).data('id');
+            $.ajax({
+                type : 'post',
+                url : 'detail_paket.php',
+                data :  'id='+ rowid,
+                success : function(data){
+                $('.detail_paket-data').html(data);
+                }
+            });
+         });
+    });
+</script>

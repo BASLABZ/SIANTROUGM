@@ -139,6 +139,8 @@
     </div><!-- #team -->
     <!-- end:team -->
 
+    <?php include 'pengumuman.php'; ?>
+
     <!-- begin:cta -->
     <div id="cta-2" class="cta-2 content-section bg-theme">
       <div class="container">

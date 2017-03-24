@@ -85,7 +85,7 @@
                           <span class="fa fa-check"></span>
                         </div>
                         <div class="process-item-content"> 
-                       <a href="index.php"> <label>ABSENSI</label></a>
+                       <a href="index.php"> <label>Nilai</label></a>
                         </div>
                       </div>
                     </div>

@@ -2,10 +2,10 @@
   <?php 
       if (isset($_GET['hapus'])) {
 
-         $queryHapusPengajar  = "DELETE from ref_trainer where trainer_id='".$_GET['hapus']."'";
+         $queryHapusPengajar  = "DELETE from ref_operator where operator_id='".$_GET['hapus']."'";
         $runDelete = mysql_query($queryHapusPengajar);
         if ($runDelete){
-            echo "<script> alert('Terimakasih Data Berhasil Dihapus'); location.href='index.php?hal=master/trainer/list' </script>";exit;
+            echo "<script> alert('Terimakasih Data Berhasil Dihapus'); location.href='index.php?hal=master/operator/list' </script>";exit;
         }
       }
    ?>
@@ -25,7 +25,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Daftar Data Master Pengajar <a href="index.php?hal=master/trainer/add" class="btn btn-info btn-sm"><span class=" fa fa-plus"></span> Tambah Data</a></h3>
+              <h3 class="box-title">Daftar Data Master Pengajar <a href="index.php?hal=master/operator/add" class="btn btn-info btn-sm"><span class=" fa fa-plus"></span> Tambah Data</a></h3>
             </div>
             <div class="box-body">
               <table id="tableMasterScroll" class="table table-bordered table-hover table-responsive">
@@ -48,28 +48,28 @@
                 <tbody>
                   <?php 
                     $no=0;
-                    $queryPengajar = mysql_query("SELECT * FROM ref_trainer order by trainer_id DESC");
+                    $queryPengajar = mysql_query("SELECT * FROM ref_operator order by operator_id DESC");
                     while ($rowTrainner  = mysql_fetch_array($queryPengajar)) {
                    ?>
                     <tr>
                       <td><?php echo ++$no; ?></td>
-                      <td><?php echo $rowTrainner['trainer_name']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_username']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_placeofbirth']; ?>/<?php echo $rowTrainner['trainer_dateofbirth']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_gender']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_religion']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_address']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_phonenumber']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_email']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_position']; ?></td>
-                      <td><?php echo $rowTrainner['trainer_status']; ?></td>
-                      <td><img src="img/<?php echo $rowTrainner['trainer_image']; ?>" class="img-thumbnail img-responsive" style="width: 100px; height: 100px;" >
+                      <td><?php echo $rowTrainner['operator_name']; ?></td>
+                      <td><?php echo $rowTrainner['operator_username']; ?></td>
+                      <td><?php echo $rowTrainner['operator_placeofbirth']; ?>/<?php echo $rowTrainner['operator_dateofbirth']; ?></td>
+                      <td><?php echo $rowTrainner['operator_gender']; ?></td>
+                      <td><?php echo $rowTrainner['operator_religion']; ?></td>
+                      <td><?php echo $rowTrainner['operator_address']; ?></td>
+                      <td><?php echo $rowTrainner['operator_phonenumber']; ?></td>
+                      <td><?php echo $rowTrainner['operator_email']; ?></td>
+                      <td><?php echo $rowTrainner['operator_position']; ?></td>
+                      <td><?php echo $rowTrainner['operator_status']; ?></td>
+                      <td><img src="img/<?php echo $rowTrainner['operator_image']; ?>" class="img-thumbnail img-responsive" style="width: 100px; height: 100px;" >
                       </td>
-                      <td><?php echo $rowTrainner['trainer_website']; ?></td>
+                      <td><?php echo $rowTrainner['operator_website']; ?></td>
 
                       <td>
-                        <a href="index.php?hal=master/trainer/edit&trainer_id=<?php echo $rowTrainner['trainer_id'] ?>" class="btn btn-warning bt-xs"><span class="fa fa-pencil"></span> Ubah</a>
-                        <a href="index.php?hal=master/trainer/list&hapus=<?php echo $rowTrainner['trainer_id']; ?>" class="btn btn-danger bt-xs"><span class="fa fa-trash"></span> Hapus</a>
+                        <a href="index.php?hal=master/operator/edit&operator_id=<?php echo $rowTrainner['operator_id'] ?>" class="btn btn-warning bt-xs"><span class="fa fa-pencil"></span> Ubah</a>
+                        <a href="index.php?hal=master/operator/list&hapus=<?php echo $rowTrainner['operator_id']; ?>" class="btn btn-danger bt-xs"><span class="fa fa-trash"></span> Hapus</a>
                       </td>
 
                     </tr>

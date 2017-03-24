@@ -18,9 +18,9 @@
               $fileName = $_FILES['confirmation_proofpayment']['name'];
               $move = move_uploaded_file($_FILES['confirmation_proofpayment']['tmp_name'], 'menejemen/upload/payment/'.$fileName);
              if ($move) {
-                  $querySimpan  = "INSERT INTO  trx_confirmation_ofpayment (confirmation_category,trainee_id_fk,confirmation_date,confirmation_accountnumber,confirmation_proofpayment,input_date,amount_transfer,confirmation_status,confirmation_note,namebank)
-             vALUES ('".$_POST['confirmation_category']."','".$_POST['trainee_id_fk']."','".$_POST['confirmation_date']."','".$_POST['confirmation_accountnumber']."',
-             '".$fileName."',NOW(),'".$_POST['amount_transfer']."','Y','".$_POST['confirmation_note']."','".$_POST['namebank']."')";
+                  $querySimpan  = "INSERT INTO  trx_confirmation_ofpayment (confirmation_category,trainee_id_fk,confirmation_date,confirmation_accountnumber,confirmation_proofpayment,input_date,amount_transfer,confirmation_status,confirmation_note,namebank,payment_date_valid,payment_valid,total_tagihan,catatan_pembayaran_konfirmasi)
+             vALUES ('".$_POST['confirmation_category']."','".$_POST['trainee_id_fk']."',NOW(),'".$_POST['confirmation_accountnumber']."',
+             '".$fileName."',NOW(),'".$_POST['amount_transfer']."','Y','".$_POST['confirmation_note']."','".$_POST['namebank']."','','MENUNGGU KONFIRMASI','".$totalPembayaranYangharus."','')";
               
              $queryUPdatePaket = "UPDATE tbl_trainee set trainee_invoice_status='AKTIVE' where trainee_invoice='".$INVOICE."' ";
 
@@ -83,13 +83,6 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label class="col-md-6">Tanggal Konfirmasi : </label>
-                        <div class="col-md-6">
-                         <input type="date" class="form-control" required="" name="confirmation_date">
-                        </div>
-                      </div>
-                    
                   </div>
                   <div class="col-md-6">
                     <div class="form-group row">

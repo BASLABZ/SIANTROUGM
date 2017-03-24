@@ -19,7 +19,7 @@
               <div class="process-item-content">
                 <span class="process-item-number"><span class="fa fa-picture-o"></span></span>
                 <h3 class="process-item-title"><?php echo $rowberita['announcement_judul']; ?></h3>
-                <a href="" class="btn btn-success"><span class="fa fa-eye"></span> Baca Pengumuman</a>
+                <a href="index.php?hal=detail_pengumuman&id_pengumuman=<?php echo $rowberita['announcement_id']; ?>" class="btn btn-success"><span class="fa fa-eye"></span> Baca Pengumuman</a>
               </div><!-- .process-item-content -->
             </div><!-- .process-item -->
           </div>

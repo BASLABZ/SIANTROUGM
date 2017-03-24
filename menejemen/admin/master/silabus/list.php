@@ -39,7 +39,7 @@
               <tbody>
                 <?php 
                   $no =0;
-                  $query = mysql_query("SELECT * FROM ref_silabus s JOIN ref_coursename c ON s.coursename_id_fk  = c.coursename_id JOIN ref_operator o ON s.operator_id_fk = o.operator_id");
+                  $query = mysql_query("SELECT * FROM ref_silabus s JOIN ref_coursename c ON s.coursename_id_fk  = c.coursename_id JOIN ref_operator o ON s.operator_id_fk = o.operator_id where o.operator_id='".$_SESSION['operator_id']."'");
                   while ($rowSilabus = mysql_fetch_array($query)) {
                  ?>
                   <tr>

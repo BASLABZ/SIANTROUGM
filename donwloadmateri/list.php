@@ -3,7 +3,21 @@
       <div class="container">
         
         <div class="row">
-
+           <div class="col-md-12">
+           <div class="panel-group" id="accordion">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                          <h1><span class="fa fa-list"></span> Control Panel</h1></a>
+                   <div id="collapse3" class="panel-collapse collapse">
+                       <div class="container">
+                         <div class="row">
+                           <div class="col-md-12">
+                             <?php include 'control-panel.php'; ?>
+                           </div>
+                         </div>
+                       </div>
+                      </div>
+                  </div>
+        </div>
           <div class="col-md-12">
             <div class="process-item highlight text-center">
               <div class="process-item-icon">

@@ -88,8 +88,8 @@
                     <td><?php echo ++$no; ?></td>
                     <td>
                       <?php 
-                          echo "<input type='text' name='coursename_id_fk[]' value='".$rowTemp['coursename_id_fk']."'>";
-                          echo "<input type='text' name='coursename_quota[]' value='".$rowTemp['coursename_quota']."'>";
+                          echo "<input type='hidden' name='coursename_id_fk[]' value='".$rowTemp['coursename_id_fk']."'>";
+                          echo "<input type='hidden' name='coursename_quota[]' value='".$rowTemp['coursename_quota']."'>";
                        ?>
                       <?php echo $rowTemp['coursename_title']; ?></td>
                     <td><?php echo $rowTemp['coursename_quota']; ?></td>

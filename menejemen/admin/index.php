@@ -5,7 +5,7 @@
         session_destroy();
         echo "<script> alert('Anda Berhasil Keluar Aplikasi'); location.href='index.php' </script>";exit;}
     if (isset($_SESSION['level_name']))
-            { if ($_SESSION['level_name'] == "SA")
+            { if ($_SESSION['level_name'] == "SA" OR $_SESSION['level_name'] == "Dosen Pengajar")
                { 
  ?>
 <!DOCTYPE html>
@@ -78,6 +78,17 @@
 <script src="../assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="../assets/summerBas/summernote.min.js"></script>
 <script src="../assets/plugins/select2/select2.full.min.js"></script>
+ <script type="text/javascript">
+      $('#payment').on('change',function () {
+        if(this.value == "MENUNGGU KONFIRMASI") {
+            $('#catatan_pembayaran_konfirmasi').hide();
+           }else if (this.value == 'VALID') {
+             $('#catatan_pembayaran_konfirmasi').hide();
+            }else if (this.value == 'TIDAK VALID') {
+              $('#catatan_pembayaran_konfirmasi').show();
+            }
+      });
+  </script>
 <script>
   $(function () {
     $('.select').select2();

@@ -3,7 +3,21 @@
       <div class="container">
         
         <div class="row">
-
+           <div class="col-md-12">
+           <div class="panel-group" id="accordion">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                          <h1><span class="fa fa-list"></span> Control Panel</h1></a>
+                   <div id="collapse3" class="panel-collapse collapse">
+                       <div class="container">
+                         <div class="row">
+                           <div class="col-md-12">
+                             <?php include 'control-panel.php'; ?>
+                           </div>
+                         </div>
+                       </div>
+                      </div>
+                  </div>
+        </div>
           <div class="col-md-12">
             <div class="process-item highlight text-center">
               <div class="process-item-icon">
@@ -19,13 +33,14 @@
                   <th>No</th>
                   <th>Invoice</th>
                   <th>Tanggal Input</th>
+                  <th>Nama Kursus</th>
                   <th>Status</th>
                   <th>Aksi</th>
                 </thead>
                 <tbody>
                 <?php 
                   $no=0;
-                  $sqlpaketkursus  = mysql_query("SELECT * FROM  tbl_trainee tn JOIN tbl_member m ON tn.member_id_fk = m.member_id where m.member_id='".$_SESSION['member_id']."' ");
+                  $sqlpaketkursus  = mysql_query("SELECT * FROM tblx_trainee_detail t join tbl_trainee tn on t.trainee_id_fk = tn.trainee_id  JOIN  ref_coursename c ON t.coursename_id_fk = c.coursename_id where tn.member_id_fk='".$_SESSION['member_id']."' ");
 
                   while ($paketkursus = mysql_fetch_array($sqlpaketkursus)) {
                  ?>
@@ -33,7 +48,8 @@
                           <td><?php echo ++$no; ?></td>
                           <td><?php echo $paketkursus['trainee_invoice']; ?></td>
                           <td><?php echo $paketkursus['trainee_inputdate']; ?></td>
-                          <td><?php echo $paketkursus['trainee_invoice_status']; ?></td>
+                          <td><?php echo $paketkursus['coursename_title']; ?></td>
+                          <td><?php echo $paketkursus['trainee_invoice_status']; ?> </td>
                           <td>
                             <a href="index.php?hal=paketkursus/detail_paket&invoice=<?php echo $paketkursus['trainee_invoice']; ?>" class="btn btn-warning"><span class="fa fa-eye"></span> Lihat Data</a>
                             <?php if ($paketkursus['trainee_invoice_status']=='PENDING') {

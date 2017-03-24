@@ -62,7 +62,11 @@
                       <li class="menu-item"><a href="index.php?hal=tentang">Tentang</a></li>
                       <li class="menu-item"><a href="index.php?hal=kontak">Kontak</a></li>
                       <!-- <li class="menu-item"><a href="index.php?hal=role-myteam">ATURAN CODING / JOB DESC</a></li> -->
+                      <?php 
+                        if (isset($_SESSION['member_id'])) {
+                       ?>
                       <li class="menu-item"><a href="index.php?hal=control-panel"><span class="fa fa-gear"></span> CONTROL PANEL</a></li>
+                      <?php } ?>
                     </ul>
                   </div>
                 </nav><!-- #site-navigation -->

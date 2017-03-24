@@ -54,6 +54,11 @@
                <span class="fa fa-check"></span>
                 <?php echo $rowPaket['coursename_status'] ?></button>
                 </h6>
+                  <h3 class="process-item-title">
+                     <button class="btn btn-success btn-md btn-block">
+                 <a href='#detail_paket'  id='custId' data-toggle='modal' data-id="<?php echo $rowPaket['coursename_id']; ?>" style='color: white;'><span class='fa fa-eye'></span> Lihat Paket</a>
+                 </button>
+                </h3>
                   <h6 class="process-item-title">
                     <?php if ($rowPaket['coursename_quota']==0) { ?>
                     <a href="#" class="btn btn-danger btn-md btn-block">Kuota Penuh</a>
@@ -62,6 +67,8 @@
                     Daftar Paket <span class="fa fa-arrow-right"></span></a>
                      <?php } ?>
                 </h6>
+                 
+                
                 
               </div><!-- .process-item-content -->
             </div><!-- .process-item -->
@@ -71,3 +78,20 @@
       </div><!-- .container -->
     </div><!-- #process -->
     <!-- end:process -->
+    <div class="modal fade" id="detail_paket" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #1ab394; color:white;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><span class="fa fa-list"></span> Detail Paket Kursus</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="detail_paket-data"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger dim_about" data-dismiss="modal"><span class="fa fa-times"></span> Keluar</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
