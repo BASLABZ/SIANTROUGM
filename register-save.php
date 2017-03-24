@@ -15,8 +15,11 @@
 
 
 	// ---- || validasi || -----
-
-	// ---- || /validasi || ----
+		$cekMember = mysql_query("SELECT * FROM tbl_member WHERE member_useremail='".$var_email."' ");
+		if (mysql_num_rows($cekMember)>0) {
+			echo "<script> alert('Maaf, email yang anda inputkan telah terdaftar sebelumnya. Mohon ikuti kebijakan kami dengan hanya memiliki satu akun untuk satu peserta. Apabila anda kesulitan dalam login silahkan gunakan fasilitas forget password untuk mengatur ulang kata sandi anda. Terimakasih'); window.history.go(-1) </script>";exit;
+		}
+	// ---- || validasi || ----
 
 	  $lokasi_file    = $_FILES['frm_profesioncard']['tmp_name'];
 	  $tipe_file      = $_FILES['frm_profesioncard']['type'];
@@ -71,7 +74,20 @@
 
 		mysql_query($save);
 
-		echo "<script> alert('Terimakasih, anda telah menyelesaikan proses pendaftaran. Kami akan segera mengkonfirmasi data yang anda kirim. Informasi selanjutkan akan kami sampaikan melalui email anda.'); location.href='index.php' </script>";exit;
+		//fungsi sendmail
+		include 'content_mail.php'; //include ja biar ringkes
+		
+		// mail($var_email, "Aktivasi Akun SiantroUGM", $pesan, $headers);
+		//sementara aku matikan fungsi sendmail nya.	
+
+		//================= BUG BUG BUG BUG BUG =====================//
+
+			//disini sering bug, entah gk kuat atau gmn kalo pake sendmail local loadingnya lama dan ujung2nya njepat! -_- echo alertnya nggak mau muncul dan browser berhenti di page ini, mohon pencerahannya mastah.
+
+		//================= BUG BUG BUG BUG BUG =====================//
+
+		
+		echo "<script> alert('Terimakasih, anda telah menyelesaikan proses pendaftaran. Mohon cek email anda untuk mengaktifasi akun SiantroUGM anda.'); location.href='index.php' </script>";exit;
 	} //if
 
 	else {
